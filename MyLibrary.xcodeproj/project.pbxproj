@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F21B58452822799D0043F473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B58442822799D0043F473 /* AppDelegate.swift */; };
 		F21B58472822799D0043F473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B58462822799D0043F473 /* SceneDelegate.swift */; };
-		F21B58492822799D0043F473 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B58482822799D0043F473 /* ViewController.swift */; };
+		F21B58492822799D0043F473 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B58482822799D0043F473 /* MainViewController.swift */; };
 		F21B584C2822799D0043F473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21B584A2822799D0043F473 /* Main.storyboard */; };
 		F21B584E2822799D0043F473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F21B584D2822799D0043F473 /* Assets.xcassets */; };
 		F21B58512822799D0043F473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F21B584F2822799D0043F473 /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		F21B58412822799D0043F473 /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21B58442822799D0043F473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F21B58462822799D0043F473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F21B58482822799D0043F473 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F21B58482822799D0043F473 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F21B584B2822799D0043F473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F21B584D2822799D0043F473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F21B58502822799D0043F473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,16 +66,23 @@
 		F21B58432822799D0043F473 /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				F28935D1282D0080009DD0E6 /* LifeCycle */,
 				F2BB51A92823AE4E0079C4CF /* Model */,
 				F2BB51AB2823AE5F0079C4CF /* View */,
 				F2BB51AA2823AE520079C4CF /* Controller */,
-				F21B58442822799D0043F473 /* AppDelegate.swift */,
-				F21B58462822799D0043F473 /* SceneDelegate.swift */,
 				F21B584D2822799D0043F473 /* Assets.xcassets */,
-				F21B584F2822799D0043F473 /* LaunchScreen.storyboard */,
 				F21B58522822799D0043F473 /* Info.plist */,
 			);
 			path = MyLibrary;
+			sourceTree = "<group>";
+		};
+		F28935D1282D0080009DD0E6 /* LifeCycle */ = {
+			isa = PBXGroup;
+			children = (
+				F21B58442822799D0043F473 /* AppDelegate.swift */,
+				F21B58462822799D0043F473 /* SceneDelegate.swift */,
+			);
+			path = LifeCycle;
 			sourceTree = "<group>";
 		};
 		F2BB51A92823AE4E0079C4CF /* Model */ = {
@@ -90,7 +97,7 @@
 		F2BB51AA2823AE520079C4CF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F21B58482822799D0043F473 /* ViewController.swift */,
+				F21B58482822799D0043F473 /* MainViewController.swift */,
 				F2B85D7928250596001F81AE /* UserDetailViewController.swift */,
 			);
 			path = Controller;
@@ -99,6 +106,7 @@
 		F2BB51AB2823AE5F0079C4CF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F21B584F2822799D0043F473 /* LaunchScreen.storyboard */,
 				F21B584A2822799D0043F473 /* Main.storyboard */,
 				F2BB51B02823C3A80079C4CF /* BookCell.swift */,
 				F2B85D7B28261223001F81AE /* MyBookCell.swift */,
@@ -180,7 +188,7 @@
 				F2B85D7A28250596001F81AE /* UserDetailViewController.swift in Sources */,
 				F2BB51B12823C3A80079C4CF /* BookCell.swift in Sources */,
 				F2BB51AD2823AE7B0079C4CF /* Book.swift in Sources */,
-				F21B58492822799D0043F473 /* ViewController.swift in Sources */,
+				F21B58492822799D0043F473 /* MainViewController.swift in Sources */,
 				F2B85D7C28261223001F81AE /* MyBookCell.swift in Sources */,
 				F21B58452822799D0043F473 /* AppDelegate.swift in Sources */,
 				F2BB51AF2823B2770079C4CF /* User.swift in Sources */,
