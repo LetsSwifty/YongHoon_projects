@@ -76,6 +76,24 @@
 			path = MyLibrary;
 			sourceTree = "<group>";
 		};
+		F2201967283004FE0096ADD0 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F21B58482822799D0043F473 /* MainViewController.swift */,
+				F2BB51B02823C3A80079C4CF /* BookCell.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		F2201968283005060096ADD0 /* UserDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F2B85D7928250596001F81AE /* UserDetailViewController.swift */,
+				F2B85D7B28261223001F81AE /* MyBookCell.swift */,
+			);
+			path = UserDetailViewController;
+			sourceTree = "<group>";
+		};
 		F28935D1282D0080009DD0E6 /* LifeCycle */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +115,8 @@
 		F2BB51AA2823AE520079C4CF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F21B58482822799D0043F473 /* MainViewController.swift */,
-				F2B85D7928250596001F81AE /* UserDetailViewController.swift */,
+				F2201967283004FE0096ADD0 /* MainViewController */,
+				F2201968283005060096ADD0 /* UserDetailViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -108,8 +126,6 @@
 			children = (
 				F21B584F2822799D0043F473 /* LaunchScreen.storyboard */,
 				F21B584A2822799D0043F473 /* Main.storyboard */,
-				F2BB51B02823C3A80079C4CF /* BookCell.swift */,
-				F2B85D7B28261223001F81AE /* MyBookCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
