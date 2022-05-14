@@ -8,41 +8,30 @@
 import UIKit
 
 class UserDetailViewController: UIViewController {
-    var books = Books()
-    var booksList = [Book]() //테이블 뷰에 보여질 책 리스트
-    @IBOutlet weak var tableViewDB: UITableView!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.booksList = [Book]()
-        for bookID in User.shared.myBooks.keys {
-            if let book = books.data[bookID] {
-                self.booksList.append(book)
-            }
-        }
-        self.booksList.sort {
-            $0.title > $1.title
-        }
-    }
+    var myData = MyData()
+    @IBOutlet var tableView: UITableView!  //User.shared.booksList가 보여진다
 }
 
 extension UserDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.booksList.count == 0 {
+        if User.shared.getNumberOfBooksList() == 0 {
             tableView.setEmptyMessage("읽은 책 목록이 없습니다")
         } else {
             tableView.restore()
         }
-
-        return self.booksList.count
+        return User.shared.getNumberOfBooksList()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let book = booksList[indexPath.row]
+        let book = User.shared.getBookInstance(index: indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: "myBookCell") as! MyBookCell
+        DispatchQueue.main.async {
+            cell.img.image = self.myData.loadImage(isbn: book.isbn, urlString: book.image!)
+        }
         cell.parentVC = self
+        cell.delegate = self  //registration
         cell.title?.text = book.title
-        cell.desc?.text = book.desc
-        cell.id = book.id
+        cell.isbn = book.isbn
         
         return cell
     }
@@ -51,7 +40,7 @@ extension UserDetailViewController: UITableViewDataSource {
 extension UserDetailViewController: UITableViewDelegate {
 }
 
-//빈 테이블 뷰일 때를 보여줄 메시지
+//[Extension] : 빈 테이블 뷰일 때를 보여줄 메시지
 extension UITableView {
     func setEmptyMessage(_ message: String) {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
@@ -68,5 +57,13 @@ extension UITableView {
     func restore() {
         self.backgroundView = nil
         self.separatorStyle = .singleLine
+    }
+}
+
+//[Extension] : 리로드
+extension UserDetailViewController: ReloadDelegate {
+    func reload() {
+        print("리로드 실행")
+        self.tableView.reloadData()
     }
 }
